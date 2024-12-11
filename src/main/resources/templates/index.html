@@ -2,11 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Catálogo de Juegos</title>
+    <title>Catálogo de Cursos</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 </head>
 <body>
-    <a href="/"><h1>Bienvenido al buscador de juegos</h1></a>
+    <a href="/"><h1>Bienvenido al buscador de cursos</h1></a>
 
     <!-- Formulario de búsqueda -->
     <form action="#" th:action="@{/juegos}" method="get">
@@ -14,13 +14,13 @@
         <button type="submit">Buscar</button>
     </form>
     
-    <!-- Lista de juegos -->
-    <h2>Lista de Juegos</h2>
+    <!-- Lista de cursos -->
+    <h2>Lista de Cursos</h2>
     <ul>
         <li th:each="juego : ${juegos}">
             <h3 th:text="${juego.nombre}"></h3>
             <p th:text="${juego.descripcion}"></p>
-            <img th:src="@{${juego.imagen}}" alt="Carátula del juego">
+            <img th:src="@{${juego.imagen}}" alt="Carátula del curso">
             <p>Valoración: <span th:text="${juego.valoracion}"></span></p>
         </li>
     </ul>
