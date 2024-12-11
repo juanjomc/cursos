@@ -8,11 +8,13 @@
 <body>
     <a href="/"><h1>Bienvenido al buscador de juegos</h1></a>
 
+    <!-- Formulario de búsqueda -->
     <form action="#" th:action="@{/juegos}" method="get">
         <input type="text" name="nombre" placeholder="Buscar juego por nombre">
         <button type="submit">Buscar</button>
     </form>
-
+    
+    <!-- Lista de juegos -->
     <h2>Lista de Juegos</h2>
     <ul>
         <li th:each="juego : ${juegos}">

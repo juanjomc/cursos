@@ -16,6 +16,7 @@ public class JuegoController {
     @Autowired
     private JuegoRepository juegoRepository;
 
+    // Maneja la solicitud para la ruta raíz ("/") y lista todos los juegos 
     @GetMapping("/")
     public String listarJuegos(Model model) {
         List<Juego> juegos = juegoRepository.findAll();
@@ -23,6 +24,7 @@ public class JuegoController {
         return "index";
     }
 
+    // Maneja la solicitud para la ruta "/juegos" y busca juegos por nombre
     @GetMapping("/juegos")
     public String buscarJuegos(@RequestParam(name = "nombre", required = false) String nombre, Model model) {
         List<Juego> juegos;
