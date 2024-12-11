@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Juegos</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+    <a href="/"><h1>Bienvenido a la página de inicio</h1></a>
+
+    <form action="#" th:action="@{/juegos}" method="get">
+        <input type="text" name="nombre" placeholder="Buscar juego por nombre">
+        <button type="submit">Buscar</button>
+    </form>
+
+    <h2>Lista de Juegos</h2>
+    <ul>
+        <li th:each="juego : ${juegos}">
+            <h3 th:text="${juego.nombre}"></h3>
+            <p th:text="${juego.descripcion}"></p>
+            <img th:src="@{${juego.imagen}}" alt="Carátula del juego">
+            <p>Valoración: <span th:text="${juego.valoracion}"></span></p>
+        </li>
+    </ul>
+
+    <script th:src="@{/js/script.js}"></script>
+</body>
+</html>
